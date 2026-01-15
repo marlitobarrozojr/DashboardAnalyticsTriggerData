@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "cross-env HEADLESS=false playwright test",
+    "test:qa": "cross-env NODE_ENV=qa playwright test",
+    "test:staging": "cross-env NODE_ENV=staging playwright test", 
+    "test:production": "cross-env NODE_ENV=production playwright test",
+    "test:local": "cross-env NODE_ENV=local playwright test",
+    "test:debug": "cross-env NODE_ENV=local HEADLESS=false DEBUG_MODE=true SLOW_MO=1000 playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:install": "playwright install",
+    "test:codegen": "playwright codegen",
+    "env:check": "node -e \"require('dotenv').config(); console.log('Environment loaded:', process.env.NODE_ENV || 'default')\""
+  }
+}
