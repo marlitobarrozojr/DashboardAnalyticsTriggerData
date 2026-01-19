@@ -65,7 +65,6 @@ test.describe('Trigger 20 Target Views for Document Link Tagging', () => {
     const sessionTagDocumentLink = TestEnvironmentConfig.getUrl(TestEnvironmentConfig.LINK_IDS.SMOKE_TESTING_DOC);
     const sessionTagDocumentLink2 = TestEnvironmentConfig.getUrl(TestEnvironmentConfig.LINK_IDS.SMOKE_TESTING_DOC);
 
-
     TestEnvironmentConfig.USERS.forEach(({ user, label }) => {
         test(`${label} Should be able to Trigger Target Views for Document Link Tagging`, async ({ page }) => {
             const navigationPage = new NavigationPage(page);
@@ -292,11 +291,19 @@ test.describe('Trigger 20 data for EVA', () => {
 
 test.describe('Trigger 20 Search data with Link Tagging', () => {
 
-    const searchData = {
-        keywords: ['Automation', 'Testing', 'Playwright', 'Covid', 'HR Policies', 'Benefits', 'Payroll', 'Onboarding', 'Offboarding', 'Employee Engagement']
+    const searchData: { keywords: string[] } = {
+        keywords: []
     };
 
-    const pageLinkTag = TestEnvironmentConfig.getGotoUrl(TestEnvironmentConfig.PAGEVIEW_LINK_TAG_IDS.AVION_PAGE_DEVELOPER_TAG);
+    let pageLinkTag = "";
+
+    if (currentEnv.environment === TestEnvironmentConfig.ENVIRONMENTS.IAAS) {
+        searchData.keywords.push(...['Automation', 'Testing', 'Playwright', 'Covid', 'HR Policies', 'Benefits', 'Payroll', 'Onboarding', 'Offboarding', 'Employee Engagement']);
+        pageLinkTag = TestEnvironmentConfig.getGotoUrl(TestEnvironmentConfig.PAGEVIEW_LINK_TAG_IDS.AVION_PAGE_DEVELOPER_TAG);
+    } else {
+        searchData.keywords.push(...['Technology Trends', 'PCS-200', 'testpage', 'Technology Banners', 'Benefits FAQs', 'Link Test Data', 'Promo Tiles', 'matrix', 'RPTest', 'Newsroom']);
+        pageLinkTag = TestEnvironmentConfig.getGotoUrl(TestEnvironmentConfig.PAGEVIEWS_LINK_TAG_PAAS.AVION_LINK_TAGGING);
+    }
 
     // const pageLinkTag = 'https://hrportal-qa.ehr.com/smoke/goto?linkId=79'; // Tag datateam
     // const pageLinkTag = 'https://hrportal-qa.ehr.com/smoke/goto?linkId=78'; // Tag developer

@@ -1,5 +1,6 @@
 import { Page } from '@playwright/test';
 import { PersonaBarPage } from './PersonaBarPage';
+import { TestEnvironmentConfig } from '../../Utils/TestEnvironmentConfig';
 
 export class LoginPage {
   readonly page: Page;
@@ -12,7 +13,7 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('https://hrportal-qa.ehr.com/smoke/login?mode=standard'); // Replace with your login URL
+    await this.page.goto(`${TestEnvironmentConfig.BASE_URL}/smoke/login?mode=standard`); // Replace with your login URL
   }
 
   async login(username: string, password: string) {

@@ -60,6 +60,27 @@ export class TestEnvironmentConfig {
     { user: 'avioneighteenuser@26', label: 'avioneighteenuser'},
     { user: 'avionnineteenuser@26', label: 'avionnineteenuser'},
     { user: 'aviontwentyuser@26', label: 'aviontwentyuser'}
+    
+    // { user: 'aviononeuser@3', label: 'aviononeeuser' },
+    // { user: 'aviontwouser@3', label: 'aviontwouser' },
+    // { user: 'avionthreeuser@3', label: 'avionthreeuser'},
+    // { user: 'avionfouruser@3', label: 'avionfouruser'},
+    // { user: 'avionfiveuser@3', label: 'avionfiveuser'},
+    // { user: 'avionsixuser@3', label: 'avionsixuser'},
+    // { user: 'avionsevenuser@3', label: 'avionsevenuser'},
+    // { user: 'avioneightuser@3', label: 'avioneightuser'},
+    // { user: 'avionnineuser@3', label: 'avionnineuser'},
+    // { user: 'aviontenuser@3', label: 'aviontenuser'},
+    // { user: 'avionelevenuser@3', label: 'avionelevenuser'},
+    // { user: 'aviontwelveuser@3', label: 'aviontwelveuser'},
+    // { user: 'avionthirteenuser@3', label: 'avionthirteenuser'},
+    // { user: 'avionfourteenuser@3', label: 'avionfourteenuser'},
+    // { user: 'avionfifthteen@3', label: 'avionfifteenuser'},
+    // { user: 'avionsixteen@3', label: 'avionsixteenuser'},
+    // { user: 'avionseventeen@3', label: 'avionseventeenuser'},
+    // { user: 'avioneigthteen@3', label: 'avioneighteenuser'},
+    // { user: 'avionnineteen@3', label: 'avionnineteenuser'},
+    // { user: 'aviontwentyuser@3', label: 'aviontwentyuser'}
   ] as const;
 
   static readonly QUESTIONS = [
@@ -89,6 +110,10 @@ export class TestEnvironmentConfig {
   static readonly DOCUMENT_LINK_TAG_IDS = {
     AI_AUTOMATION_DOC: '12',
     SMOKE_TESTING_DOC: '55'
+  } as const;
+
+  static readonly PAGEVIEWS_LINK_TAG_PAAS = {
+    AVION_LINK_TAGGING: '367'
   } as const;
   
   // Timeouts and waits (in milliseconds)
